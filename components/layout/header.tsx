@@ -7,12 +7,13 @@ const menuItems = [
 ];
 
 export const Header = () => (
-  <header className="p-3 bg-sky-400 shadow-xl">
-    <ul className="flex justify-end w-full text-xl">
+  <header className="items-center flex py-2 px-8 bg-sky-600 shadow-xl">
+    <p className="w-full text-white text-2xl">Felipe Ruiz Pinto</p>
+    <ul className="flex justify-end w-full text-lg">
       {menuItems.map((item) => (
         <li
           key={item.text}
-          className="p-3 border-2 border-transparent text-white hover:border-amber-500 cursor-pointer"
+          className="p-3 border-2 border-transparent text-white hover:border-amber-600 cursor-pointer"
         >
           {item.text}
         </li>
