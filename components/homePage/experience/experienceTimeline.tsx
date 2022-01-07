@@ -63,7 +63,7 @@ const EXPERIENCE_DUMMY: Experience[] = [
 
 export const ExperienceTimeline = () => {
   return (
-    <VerticalTimeline animate={true}>
+    <VerticalTimeline animate={false}>
       {EXPERIENCE_DUMMY.map((exp, idx) => (
         <VerticalTimelineElement
           key={idx}
