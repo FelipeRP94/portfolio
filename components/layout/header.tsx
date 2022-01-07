@@ -23,10 +23,6 @@ export const Header = () => {
         <span onClick={toggleMenu}>
           <AiOutlineMenu className="md:hidden text-xl text-white mr-4 cursor-pointer" />
         </span>
-
-        <p className="w-full text-white text-lg md:text-md lg:text-2xl">
-          Felipe Ruiz Pinto
-        </p>
         <ul className="hidden md:flex justify-end w-full text-sm md:text-md lg:text-lg">
           {menuItems.map((item) => (
             <li

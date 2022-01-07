@@ -1,7 +1,13 @@
 import type { NextPage } from "next";
+import React from "react";
+import { Hero } from "../components/homePage/hero";
 
 const Portfolio: NextPage = () => {
-  return <h1 className="p-4">This is my portfolio</h1>;
+  return (
+    <React.Fragment>
+      <Hero />
+    </React.Fragment>
+  );
 };
 
 export default Portfolio;
