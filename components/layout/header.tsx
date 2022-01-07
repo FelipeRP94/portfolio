@@ -4,7 +4,7 @@ import { MenuMobile } from "./menu-mobile";
 
 export const menuItems = [
   { text: "Overview", link: "" },
-  { text: "Experience", link: "" },
+  { text: "Experience", link: "#experience" },
   { text: "Studies", link: "" },
   { text: "Languages", link: "" },
   { text: "Contact", link: "" },
@@ -29,7 +29,7 @@ export const Header = () => {
               key={item.text}
               className="p-3 border-2 border-transparent text-white hover:border-amber-700 cursor-pointer"
             >
-              {item.text}
+              <a href={item.link}>{item.text}</a>
             </li>
           ))}
         </ul>
