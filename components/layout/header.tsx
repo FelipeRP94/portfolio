@@ -3,11 +3,11 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { MenuMobile } from "./menu-mobile";
 
 export const menuItems = [
-  { text: "Overview", link: "" },
   { text: "Experience", link: "#experience" },
-  { text: "Studies", link: "" },
-  { text: "Languages", link: "" },
-  { text: "Contact", link: "" },
+  { text: "Studies", link: "#studies" },
+  { text: "Skills", link: "#skills" },
+  { text: "Languages", link: "#languages" },
+  { text: "Contact", link: "#contact" },
 ];
 
 export const Header = () => {
