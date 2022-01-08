@@ -12,7 +12,7 @@ const SKILL_DUMMY: SkillCategory[] = [
     icon: <AiOutlineDesktop />,
     name: "Front-End",
     main: "React, Typescript, Javascript, HTML, CSS, NextJS",
-    other: "React-Query, SASS, Webpack",
+    other: "React-Query, SASS, Tailwind",
   },
   {
     icon: <AiOutlineSetting />,

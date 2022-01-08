@@ -1,8 +1,9 @@
 import { AiFillLinkedin, AiOutlineGithub } from "react-icons/ai";
+import classes from "./hero.module.css";
 
 export const Hero = () => (
-  <section className="bg-sky-900">
-    <div className="p-12 text-white">
+  <section className={classes.hero}>
+    <div className="p-12 text-white z-1">
       <h1 className="text-5xl">Hi! I`m Felipe Ruiz</h1>
       <div className="flex justify-between my-12 flex-col md:flex-row">
         <p className="md:w-2/5">
