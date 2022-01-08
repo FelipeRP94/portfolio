@@ -4,8 +4,8 @@ import { MenuMobile } from "./menu-mobile";
 
 export const menuItems = [
   { text: "Experience", link: "#experience" },
-  { text: "Studies", link: "#studies" },
   { text: "Skills", link: "#skills" },
+  { text: "Studies", link: "#studies" },
   { text: "Languages", link: "#languages" },
   { text: "Contact", link: "#contact" },
 ];
