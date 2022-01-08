@@ -22,7 +22,9 @@ export const MenuMobile = ({ open, toggleMenu }: Props) => (
       <ul className="text-lg w-full">
         {menuItems.map((item) => (
           <li key={item.text} className="text-center p-3 cursor-pointer">
-            {item.text}
+            <a href={item.link} onClick={toggleMenu}>
+              {item.text}
+            </a>
           </li>
         ))}
       </ul>
