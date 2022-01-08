@@ -1,16 +1,24 @@
-import { AiFillLinkedin, AiOutlineGithub } from "react-icons/ai";
+import { AiFillLinkedin, AiOutlineGithub, AiOutlineMail } from "react-icons/ai";
 import classes from "./hero.module.css";
 
 export const Hero = () => (
   <section className={classes.hero}>
     <div className="p-12 text-white z-1">
-      <h1 className="text-5xl">Hi! I`m Felipe Ruiz</h1>
-      <div className="flex justify-between my-12 flex-col md:flex-row">
-        <p className="md:w-2/5">
-          Full Stack web developer with more than 6 years of experience working
-          with technologies such as React, NextJS, Typescript and much more
-        </p>
-        <div className="flex my-8 md:m-0">
+      <div className="flex justify-between flex-col md:flex-row">
+        <div className="h-auto md:w-2/5">
+          <h1 className="text-5xl mb-12">Hi! I`m Felipe Ruiz</h1>
+          <p className="my-4">
+            Full Stack web developer with more than 6 years of experience
+            working with technologies such as React, NextJS, Typescript and much
+            more
+          </p>
+          <p className="my-4">
+            I would define myself as a very confident person, centered on
+            details and always help my teamates to reach the project goals
+          </p>
+        </div>
+
+        <div className="flex my-8 md:m-0 items-end">
           <a
             className="text-4xl cursor-pointer"
             href="https://linkedin.com/in/felipe-ruiz-pinto-210a63151"
@@ -26,6 +34,12 @@ export const Hero = () => (
             rel="nofollow noopener noreferrer"
           >
             <AiOutlineGithub />
+          </a>
+          <a
+            className="text-4xl mx-2 cursor-pointer"
+            href="mailto:felipe.r.p.1994@gmail.com"
+          >
+            <AiOutlineMail />
           </a>
         </div>
       </div>
