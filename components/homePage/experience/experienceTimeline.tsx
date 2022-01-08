@@ -4,12 +4,14 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { Experience } from "../../../model/experience";
+import { DiReact, DiPhp, DiJava, DiWindows } from "react-icons/di";
 
 const EXPERIENCE_DUMMY: Experience[] = [
   {
     position: "Senior Full Stack Developer",
     date: "Oct 2021 - present",
     company: "Aertec Solutions",
+    icon: <DiReact />,
     description:
       "Working in internal applications and solutions for airports. Maintenance and new features using React, NextJS, .Net Core and SQL Server",
   },
@@ -17,6 +19,7 @@ const EXPERIENCE_DUMMY: Experience[] = [
     position: "Front-End Developer",
     date: "Aug 2020 - Oct 2021",
     company: "Freepik Company",
+    icon: <DiPhp />,
     description:
       "Maintenance and develop of new features in the company's main product using PHP, Typescript, SASS and HTML",
   },
@@ -26,11 +29,13 @@ const EXPERIENCE_DUMMY: Experience[] = [
     company: "Ciklum",
     description:
       "Working with React, .Net Core and SQL Server for car leasing company.",
+    icon: <DiReact />,
   },
   {
     position: "Full Stack Developer",
     date: "Jun 2018 - Feb 2020",
     company: "Aertec Solutions",
+    icon: <DiReact />,
     description:
       "Working in internal applications and solutions for airports. Maintenance and new features using React, NextJS, .Net Core and SQL Server",
   },
@@ -39,12 +44,14 @@ const EXPERIENCE_DUMMY: Experience[] = [
     date: "Mar 2018 - Jun 2018",
     company: "Avanade",
     description: "Microsoft Dynamics CRM",
+    icon: <DiWindows />,
   },
   {
     position: "Java Developer",
     date: "Sep 2017 - Mar 2018",
     company: "Viewnext",
     description: "Working for Spanish goverment aplications with Java",
+    icon: <DiJava />,
   },
   {
     position: "Junior Full Stack Developer",
@@ -52,12 +59,14 @@ const EXPERIENCE_DUMMY: Experience[] = [
     company: "Ticsur Consultoría Estratégica",
     description:
       "Develop of web applications for customers using PHP, HTML, Javascript, JQuery, SQL Server",
+    icon: <DiPhp />,
   },
   {
     position: "Trainee web developer",
     date: "Sep 2015 - Mar 2016",
     company: "CLAROFLEX",
     description: "Working with JavaEE, HTML, CSS, Javascript and MySQL",
+    icon: <DiJava />,
   },
 ];
 
@@ -74,9 +83,12 @@ export const ExperienceTimeline = () => {
           }}
           date={exp.date}
           iconStyle={{
-            background: idx === 0 ? "#b45309" : "#0284c7",
+            background: idx === 0 ? "#0c4a6e" : "#0284c7",
             color: "#fff",
+            fontSize: "24px",
           }}
+          icon={exp.icon}
+          iconClassName="text-sm"
         >
           <h3 className="vertical-timeline-element-title text-xl font-bold">
             {exp.position}

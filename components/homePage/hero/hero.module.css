@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  background: #0284c7;
+  background: #0c4a6e;
   height: 50vh;
 }
 
@@ -8,7 +8,7 @@
   position: absolute;
   height: 70px;
   width: 100%;
-  background: #0284c7;
+  background: #0c4a6e;
   bottom: 0;
 }
 
@@ -30,7 +30,7 @@
 .wave::after {
   width: 55%;
   height: 100%;
-  background-color: #0284c7;
+  background-color: #0c4a6e;
   left: -1.5%;
   top: 40%;
 }

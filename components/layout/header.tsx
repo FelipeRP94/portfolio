@@ -27,7 +27,7 @@ export const Header = () => {
           {menuItems.map((item) => (
             <li
               key={item.text}
-              className="p-3 border-2 border-transparent text-white hover:border-amber-700 cursor-pointer"
+              className="p-3 border-2 border-transparent text-white hover:border-sky-900 cursor-pointer"
             >
               <a href={item.link}>{item.text}</a>
             </li>
