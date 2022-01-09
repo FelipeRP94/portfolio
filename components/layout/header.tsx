@@ -19,7 +19,7 @@ export const Header = () => {
 
   return (
     <Fragment>
-      <header className="items-center flex py-2 px-4 md:px-8 bg-sky-900 shadow-xl relative w-full sticky top-0 z-10">
+      <header className="items-center flex py-2 px-4 md:px-8 bg-slate-900 shadow-xl relative w-full sticky top-0 z-10">
         <span onClick={toggleMenu} className="p-2">
           <AiOutlineMenu className="md:hidden text-xl text-white mr-4 cursor-pointer" />
         </span>

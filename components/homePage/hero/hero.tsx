@@ -6,7 +6,7 @@ export const Hero = () => (
     <div className="p-12 text-white z-1">
       <div className="flex justify-between flex-col md:flex-row">
         <div className="h-auto md:w-2/5">
-          <h1 className="text-5xl mb-12">Hi! I`m Felipe Ruiz</h1>
+          <h1 className="text-5xl mt-12 mb-20">Hi! I`m Felipe Ruiz</h1>
           <p className="my-4">
             Full Stack web developer with more than 6 years of experience
             working with technologies such as React, NextJS, Typescript and much
@@ -20,7 +20,7 @@ export const Hero = () => (
 
         <div className="flex my-8 md:m-0 items-end">
           <a
-            className="text-4xl cursor-pointer"
+            className="text-4xl mr-1 cursor-pointer"
             href="https://linkedin.com/in/felipe-ruiz-pinto-210a63151"
             target="_blank"
             rel="nofollow noopener noreferrer"
@@ -28,7 +28,7 @@ export const Hero = () => (
             <AiFillLinkedin />
           </a>
           <a
-            className="text-4xl mx-2 cursor-pointer"
+            className="text-4xl mx-1 cursor-pointer"
             href="https://github.com/FelipeRP94"
             target="_blank"
             rel="nofollow noopener noreferrer"
@@ -36,7 +36,7 @@ export const Hero = () => (
             <AiOutlineGithub />
           </a>
           <a
-            className="text-4xl mx-2 cursor-pointer"
+            className="text-4xl mx-1 cursor-pointer"
             href="mailto:felipe.r.p.1994@gmail.com"
           >
             <AiOutlineMail />
