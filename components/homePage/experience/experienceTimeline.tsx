@@ -79,16 +79,14 @@ export const ExperienceTimeline = () => {
           position={idx % 2 === 0 ? "right" : "left"}
           className={"vertical-timeline-element--work"}
           contentArrowStyle={{
-            borderRight: "7px solid #0369a1",
+            borderRight: "7px solid #0c4a6e",
           }}
           date={exp.date}
           iconStyle={{
             background: "#0c4a6e",
             color: "#fff",
-            fontSize: "24px",
           }}
           icon={exp.icon}
-          iconClassName="text-sm"
         >
           <h3 className="vertical-timeline-element-title text-xl font-bold">
             {exp.position}
