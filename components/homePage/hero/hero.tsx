@@ -2,7 +2,7 @@ import { AiFillLinkedin, AiOutlineGithub, AiOutlineMail } from "react-icons/ai";
 import classes from "./hero.module.css";
 
 export const Hero = () => (
-  <section className={classes.hero}>
+  <section className={classes.hero} id="overview">
     <div className="p-12 text-white z-1">
       <div className="flex justify-between flex-col md:flex-row">
         <div className="h-auto md:w-2/5">

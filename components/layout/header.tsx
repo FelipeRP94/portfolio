@@ -1,17 +1,20 @@
 import { Fragment, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
+import { useElementInScreen } from "../../hooks/useElementInScreen";
 import { MenuMobile } from "./menu-mobile";
 
 export const menuItems = [
-  { text: "Experience", link: "#experience" },
-  { text: "Skills", link: "#skills" },
-  { text: "Studies", link: "#studies" },
-  { text: "Languages", link: "#languages" },
-  { text: "Contact", link: "#contact" },
+  { text: "Overview", id: "overview" },
+  { text: "Experience", id: "experience" },
+  { text: "Skills", id: "skills" },
+  { text: "Studies", id: "studies" },
+  { text: "Languages", id: "languages" },
+  { text: "Contact", id: "contact" },
 ];
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [sectionVisible] = useElementInScreen();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -19,7 +22,7 @@ export const Header = () => {
 
   return (
     <Fragment>
-      <header className="items-center flex py-2 px-4 md:px-8 bg-slate-900 shadow-xl relative w-full sticky top-0 z-10">
+      <header className="items-center flex py-2 px-4 md:px-8 bg-slate-800 shadow-xl relative w-full sticky top-0 z-10">
         <span onClick={toggleMenu} className="p-2">
           <AiOutlineMenu className="md:hidden text-xl text-white mr-4 cursor-pointer" />
         </span>
@@ -27,9 +30,12 @@ export const Header = () => {
           {menuItems.map((item) => (
             <li
               key={item.text}
-              className="p-3 border-2 border-transparent text-white hover:border-sky-900 cursor-pointer"
+              className={`${
+                sectionVisible === item.id ? "border-b-4 border-b-white " : ""
+              }p-3 border-2 border-transparent text-white hover:border-white cursor-pointer`}
+              data-menu={item.id}
             >
-              <a href={item.link}>{item.text}</a>
+              <a href={`#${item.id}`}>{item.text}</a>
             </li>
           ))}
         </ul>

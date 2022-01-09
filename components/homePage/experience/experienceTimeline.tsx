@@ -83,7 +83,7 @@ export const ExperienceTimeline = () => {
           }}
           date={exp.date}
           iconStyle={{
-            background: idx === 0 ? "#0c4a6e" : "#0369a1",
+            background: "#0c4a6e",
             color: "#fff",
             fontSize: "24px",
           }}
