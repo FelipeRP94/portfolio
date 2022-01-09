@@ -31,7 +31,7 @@ export const Timeline = ({ data }: Props) => (
         <h4 className="vertical-timeline-element-subtitle text-lg text-slate-500">
           {item.subtitle}
         </h4>
-        <p>{item.description}</p>
+        {item.description && <p>{item.description}</p>}
       </VerticalTimelineElement>
     ))}
   </VerticalTimeline>
