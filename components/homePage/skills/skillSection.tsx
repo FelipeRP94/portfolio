@@ -27,7 +27,7 @@ const SKILL_DUMMY: SkillCategory[] = [
   },
 ];
 
-export const SkillList = () => {
+export const SkillSection = () => {
   return (
     <section className="bg-sky-900 p-8 md:p-12 my-12" id="skills">
       <h1 className="text-center text-4xl font-bold my-12 text-white">

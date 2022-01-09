@@ -1,15 +1,15 @@
 import type { NextPage } from "next";
 import React from "react";
-import { ExperienceList } from "../components/homePage/experience/experienceList";
+import { ExperienceSection } from "../components/homePage/experience/experienceSection";
 import { Hero } from "../components/homePage/hero/hero";
-import { SkillList } from "../components/homePage/skills/skillList";
+import { SkillSection } from "../components/homePage/skills/skillSection";
 
 const Portfolio: NextPage = () => {
   return (
     <React.Fragment>
       <Hero />
-      <ExperienceList />
-      <SkillList />
+      <ExperienceSection />
+      <SkillSection />
     </React.Fragment>
   );
 };

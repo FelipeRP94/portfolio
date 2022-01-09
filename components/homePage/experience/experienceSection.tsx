@@ -1,12 +1,8 @@
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
 import { Experience } from "../../../model/experience";
 import { DiReact, DiPhp, DiJava, DiWindows } from "react-icons/di";
+import { Timeline } from "../../common/timeline/timeline";
 
-const EXPERIENCE_DUMMY: Experience[] = [
+const EXPERIENCE: Experience[] = [
   {
     position: "Senior Full Stack Developer",
     date: "Oct 2021 - present",
@@ -70,33 +66,21 @@ const EXPERIENCE_DUMMY: Experience[] = [
   },
 ];
 
-export const ExperienceTimeline = () => {
+export const ExperienceSection = () => {
+  const data = EXPERIENCE.map((exp) => ({
+    date: exp.date,
+    title: exp.position,
+    subtitle: exp.company,
+    description: exp.description,
+    icon: exp.icon,
+  }));
+
   return (
-    <VerticalTimeline animate={false}>
-      {EXPERIENCE_DUMMY.map((exp, idx) => (
-        <VerticalTimelineElement
-          key={idx}
-          position={idx % 2 === 0 ? "right" : "left"}
-          className={"vertical-timeline-element--work"}
-          contentArrowStyle={{
-            borderRight: "7px solid #0c4a6e",
-          }}
-          date={exp.date}
-          iconStyle={{
-            background: "#0c4a6e",
-            color: "#fff",
-          }}
-          icon={exp.icon}
-        >
-          <h3 className="vertical-timeline-element-title text-xl font-bold">
-            {exp.position}
-          </h3>
-          <h4 className="vertical-timeline-element-subtitle text-lg text-slate-500">
-            {exp.company}
-          </h4>
-          <p>{exp.description}</p>
-        </VerticalTimelineElement>
-      ))}
-    </VerticalTimeline>
+    <section className="p-4 md:p-12 my-12" id="experience">
+      <h1 className="text-center text-4xl font-bold text-sky-900 my-12">
+        Experience
+      </h1>
+      <Timeline data={data} />
+    </section>
   );
 };
