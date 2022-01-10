@@ -24,6 +24,7 @@ const SKILL_DUMMY: SkillCategory[] = [
     icon: <AiOutlineBranches />,
     name: "Methodology",
     main: "Git, Bitbucket, Jira, Scrum",
+    other: "Cypress, Ghost Inspector",
   },
 ];
 

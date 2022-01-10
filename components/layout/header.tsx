@@ -4,7 +4,7 @@ import { useElementInScreen } from "../../hooks/useElementInScreen";
 import { MenuMobile } from "./menu-mobile";
 
 export const menuItems = [
-  { text: "Overview", id: "overview" },
+  { text: "About me", id: "aboutme" },
   { text: "Experience", id: "experience" },
   { text: "Skills", id: "skills" },
   { text: "Studies", id: "studies" },

@@ -10,12 +10,12 @@ export const ContactSection = () => (
   >
     <h1 className="text-center text-4xl font-bold my-12">Contact</h1>
     <div className="flex flex-col md:flex-row">
-      <div className="md:w-2/5">
-        <p className="my-4 text-justify">
+      <div className="md:w-3/5">
+        <p className="my-4 text-justify text-bold">
           Do you want to contact with me? Send me an email or visit my LinkedIn
           profile.
         </p>
-        <p className="my-4 text-justify">
+        <p className="my-4 text-justify text-bold">
           Take a look to my projects in GitHub for checking my programming
           skills. You can download the projects and even send me PR to improve
           them.
@@ -31,7 +31,7 @@ export const ContactSection = () => (
         </ButtonLink>
       </div>
 
-      <div className="gap-2 flex md:flex-col md:justify-start md:items-end flex-row md:w-3/5">
+      <div className="gap-2 flex md:flex-col md:justify-start md:items-center flex-row md:w-2/5">
         <ButtonLink
           link="https://linkedin.com/in/felipe-ruiz-pinto-210a63151"
           className={classes.linkedin}

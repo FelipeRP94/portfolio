@@ -11,7 +11,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Felipe Ruiz Pinto</title>
         <meta charSet="utf-8" />
-        <meta name="description" content="Full Stack Web Developer" />
+        <meta
+          name="description"
+          content="Full Stack Web Developer with more than 6 years of experience"
+        />
       </Head>
       <main>
         <Component {...pageProps} />
