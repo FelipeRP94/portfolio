@@ -1,13 +1,12 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { Fragment } from "react";
-import { Header } from "../components/layout/header";
 import Head from "next/head";
+import { Layout } from "../components/layout/layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Fragment>
-      <Header />
       <Head>
         <title>Felipe Ruiz Pinto</title>
         <meta charSet="utf-8" />
@@ -17,7 +16,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <main>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </main>
     </Fragment>
   );
