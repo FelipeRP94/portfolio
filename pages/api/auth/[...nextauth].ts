@@ -26,14 +26,18 @@ export default NextAuth({
         });
 
         if (!user) {
+          await prisma.$disconnect();
           throw new Error("No user found");
         }
 
         const passwordValid = await checkHashValue(password, user.password);
 
         if (!passwordValid) {
+          await prisma.$disconnect();
           throw new Error("Password is incorrect");
         }
+
+        await prisma.$disconnect();
 
         return {
           name: "Felipe Ruiz",

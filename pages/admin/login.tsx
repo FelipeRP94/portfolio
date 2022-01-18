@@ -38,7 +38,7 @@ const LoginPage: NextPage = () => {
             name="username"
             value={username}
             onChange={(ev) => setUsername(ev.target.value)}
-            className="mb-2 p-1 rounded-md border-2 border-black w-64"
+            className="mb-2 p-1 rounded-md border-2 border-black w-64 hover:shadow-lg"
           />
           <label htmlFor="password">Password</label>
           <input
@@ -47,7 +47,7 @@ const LoginPage: NextPage = () => {
             name="password"
             value={password}
             onChange={(ev) => setPassword(ev.target.value)}
-            className="mb-4 p-1 rounded-md border-2 border-black w-64"
+            className="mb-4 p-1 rounded-md border-2 border-black w-64 hover:shadow-lg"
           />
           <button
             type="submit"
