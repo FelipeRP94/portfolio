@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React from "react";
 import { Header } from "./header";
 
@@ -6,9 +7,12 @@ interface Props {
 }
 
 export const Layout = ({ children }: Props) => {
+  const router = useRouter();
+  const { pathname } = router;
+
   return (
     <React.Fragment>
-      <Header />
+      {!pathname.match(/login/i) && <Header />}
       <main>{children}</main>
     </React.Fragment>
   );
