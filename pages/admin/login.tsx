@@ -7,6 +7,7 @@ const LoginPage: NextPage = () => {
   const router = useRouter();
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string>("");
 
   const submitLogin = async (event: any) => {
     event.preventDefault();
@@ -16,6 +17,8 @@ const LoginPage: NextPage = () => {
       password,
       redirect: false,
     });
+
+    error && setError(error);
 
     !error && router.push("/admin");
   };
@@ -52,6 +55,7 @@ const LoginPage: NextPage = () => {
           >
             Login
           </button>
+          {error && <p className="text-red-500">{error}</p>}
         </div>
       </form>
     </Fragment>
