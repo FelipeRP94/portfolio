@@ -2,26 +2,13 @@ import { NextPage } from "next";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 import { Fragment, useState } from "react";
+import { Button } from "../../components/ui/button";
+import { InputText } from "../../components/ui/inputText";
+import { useLoginForm } from "../../hooks/useLoginForm";
 
 const LoginPage: NextPage = () => {
-  const router = useRouter();
-  const [username, setUsername] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [error, setError] = useState<string>("");
-
-  const submitLogin = async (event: any) => {
-    event.preventDefault();
-
-    const { error }: any = await signIn("credentials", {
-      username,
-      password,
-      redirect: false,
-    });
-
-    error && setError(error);
-
-    !error && router.push("/admin");
-  };
+  const { username, password, setUsername, setPassword, error, submitLogin } =
+    useLoginForm();
 
   return (
     <Fragment>
@@ -29,32 +16,24 @@ const LoginPage: NextPage = () => {
         onSubmit={submitLogin}
         className="flex items-center justify-center h-full"
       >
-        <div className="flex flex-col w-96 items-center bg-white rounded-xl p-4 shadow-xl">
-          <p className="mb-8 text-2xl">Login</p>
-          <label htmlFor="username">Username</label>
-          <input
+        <div className="flex flex-col items-center bg-white rounded-xl p-16 shadow-xl">
+          <p className="mb-8 text-4xl">Login</p>
+          <InputText
             id="username"
-            type="text"
             name="username"
+            label="Username"
             value={username}
-            onChange={(ev) => setUsername(ev.target.value)}
-            className="mb-2 p-1 rounded-md border-2 border-black w-64 hover:shadow-lg"
+            onChange={setUsername}
           />
-          <label htmlFor="password">Password</label>
-          <input
+          <InputText
             id="password"
-            type="password"
             name="password"
+            label="Password"
+            type="password"
             value={password}
-            onChange={(ev) => setPassword(ev.target.value)}
-            className="mb-4 p-1 rounded-md border-2 border-black w-64 hover:shadow-lg"
+            onChange={setPassword}
           />
-          <button
-            type="submit"
-            className="p-2 m-6 w-40 border-2 rounded-md bg-sky-500 text-white border-2 border-white hover:bg-sky-600"
-          >
-            Login
-          </button>
+          <Button type="submit" text="Login" />
           {error && <p className="text-red-500">{error}</p>}
         </div>
       </form>

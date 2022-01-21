@@ -17,7 +17,7 @@ export default NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials, req) {
-        const { username, password } = credentials;
+        const { username, password }: any = credentials;
 
         const user = await prisma.user.findFirst({
           where: {
@@ -40,7 +40,7 @@ export default NextAuth({
         await prisma.$disconnect();
 
         return {
-          name: "Felipe Ruiz",
+          name: user.name,
           email: user.email,
         };
       },
