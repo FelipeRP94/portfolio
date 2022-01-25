@@ -1,14 +1,12 @@
 import { NextPage } from "next";
-import { signIn } from "next-auth/react";
-import { useRouter } from "next/router";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { Button } from "../../components/ui/button";
 import { InputText } from "../../components/ui/inputText";
-import { useLoginForm } from "../../hooks/useLoginForm";
+import { useLogin } from "../../hooks/useLogin";
 
 const LoginPage: NextPage = () => {
   const { username, password, setUsername, setPassword, error, submitLogin } =
-    useLoginForm();
+    useLogin();
 
   return (
     <Fragment>

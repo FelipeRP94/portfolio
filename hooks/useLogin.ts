@@ -1,8 +1,8 @@
-import { signIn } from "next-auth/react";
+import { signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-export const useLoginForm = () => {
+export const useLogin = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
@@ -22,6 +22,13 @@ export const useLoginForm = () => {
     !error && router.push("/admin");
   };
 
+  const doLogout = () => {
+    signOut({
+      callbackUrl: `${window.location.origin}/admin/login`,
+      redirect: false,
+    });
+  };
+
   return {
     username,
     setUsername,
@@ -29,5 +36,6 @@ export const useLoginForm = () => {
     setPassword,
     error,
     submitLogin,
+    doLogout,
   };
 };
