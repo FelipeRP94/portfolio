@@ -12,7 +12,7 @@ const LoginPage: NextPage = () => {
     <Fragment>
       <form
         onSubmit={submitLogin}
-        className="flex items-center justify-center h-full"
+        className="flex items-center justify-center h-full w-full absolute"
       >
         <div className="flex flex-col items-center bg-white rounded-xl p-16 shadow-xl">
           <p className="mb-8 text-4xl">Login</p>

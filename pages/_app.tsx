@@ -15,11 +15,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
           content="Full Stack Web Developer with more than 6 years of experience"
         />
       </Head>
-      <main>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </main>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </SessionProvider>
   );
 }
