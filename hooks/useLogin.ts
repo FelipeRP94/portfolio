@@ -21,20 +21,17 @@ export const useLogin = () => {
       return;
     }
 
-    const { error }: any = await signIn("credentials", {
+    const { error: signInError }: any = await signIn("credentials", {
       username,
       password,
       redirect: false,
     });
 
-    error && setError(error);
-
-    !error && router.push("/admin");
+    signInError && setError(signInError);
   };
 
   const doLogout = () => {
     signOut({
-      callbackUrl: `${window.location.origin}/admin/login`,
       redirect: false,
     });
   };
