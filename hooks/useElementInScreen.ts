@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { menuItems } from "../components/layout/header";
+import { menuItems } from "../components/layout/headerPortfolio";
 
 export const useElementInScreen = () => {
   const [sectionVisible, setSectionVisible] = useState<string>("");

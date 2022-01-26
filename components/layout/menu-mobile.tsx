@@ -1,4 +1,4 @@
-import { menuItems } from "./header";
+import { menuItems } from "./headerPortfolio";
 import { AiOutlineClose } from "react-icons/ai";
 
 interface Props {

@@ -1,13 +1,12 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { Fragment } from "react";
-import { Header } from "../components/layout/header";
 import Head from "next/head";
+import { Layout } from "../components/layout/layout";
+import { SessionProvider } from "next-auth/react";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
-    <Fragment>
-      <Header />
+    <SessionProvider session={session}>
       <Head>
         <title>Felipe Ruiz Pinto</title>
         <meta charSet="utf-8" />
@@ -16,10 +15,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="Full Stack Web Developer with more than 6 years of experience"
         />
       </Head>
-      <main>
+      <Layout>
         <Component {...pageProps} />
-      </main>
-    </Fragment>
+      </Layout>
+    </SessionProvider>
   );
 }
 
