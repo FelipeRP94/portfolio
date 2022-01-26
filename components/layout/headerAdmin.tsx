@@ -1,13 +1,13 @@
-import { useSession } from "next-auth/react";
 import { Header } from "./header";
 import { AiOutlinePoweroff, AiOutlineUser } from "react-icons/ai";
 import { useLogin } from "../../hooks/useLogin";
+import { useSession } from "next-auth/react";
 
 export const HeaderAdmin = () => {
   const { data } = useSession();
   const { doLogout } = useLogin();
 
-  return (
+  return data ? (
     <Header>
       <div className="w-full flex items-center justify-end m-3 text-white">
         <AiOutlineUser />
@@ -18,5 +18,5 @@ export const HeaderAdmin = () => {
         </button>
       </div>
     </Header>
-  );
+  ) : null;
 };

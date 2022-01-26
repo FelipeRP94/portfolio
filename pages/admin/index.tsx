@@ -1,10 +1,17 @@
 import { NextPage } from "next";
 import { useSession } from "next-auth/react";
-import { useAuth } from "../../hooks/useAuth";
+import { LoginForm } from "../../components/adminPage/loginForm";
 
 const AdminPage: NextPage = () => {
-  useAuth();
-  const { data } = useSession();
+  const { status, data } = useSession();
+
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (!data) {
+    return <LoginForm />;
+  }
 
   return <p>Welcome {data?.user?.name}</p>;
 };

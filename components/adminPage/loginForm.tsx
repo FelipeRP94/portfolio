@@ -1,10 +1,9 @@
-import { NextPage } from "next";
 import { Fragment } from "react";
-import { Button } from "../../components/ui/button";
-import { InputText } from "../../components/ui/inputText";
+import { Button } from "../ui/button";
+import { InputText } from "../ui/inputText";
 import { useLogin } from "../../hooks/useLogin";
 
-const LoginPage: NextPage = () => {
+export const LoginForm = () => {
   const { username, password, setUsername, setPassword, error, submitLogin } =
     useLogin();
 
@@ -38,5 +37,3 @@ const LoginPage: NextPage = () => {
     </Fragment>
   );
 };
-
-export default LoginPage;
