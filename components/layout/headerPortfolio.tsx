@@ -8,7 +8,7 @@ export const menuItems = [
   { text: "About me", id: "aboutme" },
   { text: "Experience", id: "experience" },
   { text: "Skills", id: "skills" },
-  { text: "Studies", id: "studies" },
+  { text: "Education", id: "education" },
   { text: "Contact", id: "contact" },
 ];
 

@@ -11,20 +11,20 @@ const SKILL_DUMMY: SkillCategory[] = [
   {
     icon: <AiOutlineDesktop />,
     name: "Front-End",
-    main: "React, Typescript, Javascript, HTML, CSS, NextJS",
-    other: "React-Query, SASS, Tailwind",
+    main: ["React", "Typescript", "Javascript", "HTML", "CSS", "NextJS"],
+    other: ["React-Query", "SASS", "Tailwind"],
   },
   {
     icon: <AiOutlineSetting />,
     name: "Back-End",
-    main: ".Net Core, Entity Framework, SQL Server",
-    other: "PHP, NodeJS, MySQL",
+    main: [".Net Core", "Entity Framework", "SQL Server"],
+    other: ["PHP", "NodeJS", "MySQL"],
   },
   {
     icon: <AiOutlineBranches />,
     name: "Methodology",
-    main: "Git, Bitbucket, Jira, Scrum",
-    other: "Cypress, Ghost Inspector",
+    main: ["Git", "Bitbucket", "Jira", "Scrum"],
+    other: ["Cypress", "Ghost Inspector"],
   },
 ];
 
