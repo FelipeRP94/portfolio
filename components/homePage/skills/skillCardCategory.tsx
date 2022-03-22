@@ -7,7 +7,7 @@ interface Props {
 export const SkillCategoryCard = ({ skillCategory }: Props) => {
   const { icon, name, main, other } = skillCategory;
 
-  const renderSkill = (skill: string, idx: number) => (
+  const getSkillPill = (skill: string, idx: number) => (
     <div className="border-2 border-sky-900 rounded-lg p-2 mr-2 mb-2" key={idx}>
       {skill}
     </div>
@@ -19,12 +19,12 @@ export const SkillCategoryCard = ({ skillCategory }: Props) => {
       <p className="my-4 font-bold text-2xl text-center">{name}</p>
       <p className="my-4">
         <span className="text-slate-500 text-lg">Main skills</span>
-        <div className="flex flex-wrap mt-2">{main.map(renderSkill)}</div>
+        <div className="flex flex-wrap mt-2">{main.map(getSkillPill)}</div>
       </p>
       {other && (
         <p>
           <span className="text-slate-500 text-lg mb-2">Other skills</span>
-          <div className="flex flex-wrap mt-2">{other.map(renderSkill)}</div>
+          <div className="flex flex-wrap mt-2">{other.map(getSkillPill)}</div>
         </p>
       )}
     </div>
