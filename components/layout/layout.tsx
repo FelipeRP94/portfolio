@@ -1,25 +1,17 @@
-import React from "react";
 import { useRouter } from "next/router";
-import { HeaderAdmin } from "./headerAdmin";
-import { HeaderPortfolio } from "./headerPortfolio";
+import { LayoutAdmin } from "./layoutAdmin";
+import { LayoutPortfolio } from "./layoutPortfolio";
 
 interface Props {
   children: React.ReactNode;
 }
 
 export const Layout = ({ children }: Props) => {
-  const router = useRouter();
-  const { pathname } = router;
+  const { pathname } = useRouter();
 
-  const header = pathname.match(/admin/i) ? (
-    <HeaderAdmin />
+  return pathname.match(/admin/i) ? (
+    <LayoutAdmin>{children}</LayoutAdmin>
   ) : (
-    <HeaderPortfolio />
-  );
-  return (
-    <React.Fragment>
-      {!pathname.match(/login/i) && header}
-      <main>{children}</main>
-    </React.Fragment>
+    <LayoutPortfolio>{children}</LayoutPortfolio>
   );
 };
