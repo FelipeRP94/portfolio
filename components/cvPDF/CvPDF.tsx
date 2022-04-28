@@ -22,7 +22,7 @@ export const CvPDF = () => {
       fontFamily: "Montserrat",
     },
     mainData: {
-      flex: 2,
+      flex: 3,
       padding: 20,
     },
     secondaryData: {
