@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 
 const withImages = require("next-images");
+const withFonts = require("next-fonts");
 
-module.exports = withImages({
-  reactStrictMode: true,
-});
+module.exports = withFonts(
+  withImages({
+    reactStrictMode: true,
+  })
+);

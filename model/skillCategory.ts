@@ -4,3 +4,8 @@ export interface SkillCategory {
   main: string[];
   other?: string[];
 }
+
+export interface SkillCV {
+  name: string;
+  level: number;
+}
