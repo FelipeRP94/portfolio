@@ -1,32 +1,6 @@
-import { SkillCategory } from "../../../model/skillCategory";
-import {
-  AiOutlineDesktop,
-  AiOutlineSetting,
-  AiOutlineBranches,
-} from "react-icons/ai";
 import React from "react";
 import { SkillCategoryCard } from "./skillCardCategory";
-
-const SKILL_DUMMY: SkillCategory[] = [
-  {
-    icon: <AiOutlineDesktop />,
-    name: "Front-End",
-    main: ["React", "Typescript", "Javascript", "HTML", "CSS", "NextJS"],
-    other: ["React-Query", "SASS", "Tailwind"],
-  },
-  {
-    icon: <AiOutlineSetting />,
-    name: "Back-End",
-    main: [".Net Core", "Entity Framework", "SQL Server"],
-    other: ["PHP", "NodeJS", "MySQL"],
-  },
-  {
-    icon: <AiOutlineBranches />,
-    name: "Methodology",
-    main: ["Git", "Bitbucket", "Jira", "Scrum"],
-    other: ["Cypress", "Ghost Inspector"],
-  },
-];
+import { SKILL_DUMMY } from "../../common/data/skills";
 
 export const SkillSection = () => (
   <section className="bg-sky-900 p-8 md:p-12 my-12" id="skills">
