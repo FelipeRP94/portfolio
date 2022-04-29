@@ -28,7 +28,7 @@ export const CvPDF = () => {
     secondaryData: {
       backgroundColor: primaryColor,
       flex: 1,
-      padding: 30,
+      padding: 10,
       paddingVertical: 80,
       color: "white",
       fontSize: 12,
