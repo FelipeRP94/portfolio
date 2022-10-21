@@ -9,7 +9,7 @@ describe("ExperienceList component", () => {
       {
         position: "Position 1",
         company: "Company 1",
-        date: "2020-2021",
+        dateFrom: new Date("2020-2021"),
         description: "Test experience",
       },
     ];
