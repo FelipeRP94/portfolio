@@ -9,7 +9,7 @@ interface Props {
 export const Layout = ({ children }: Props) => {
   const { pathname } = useRouter();
 
-  return pathname.match(/admin/i) ? (
+  return /admin/i.test(pathname) ? (
     <LayoutAdmin>{children}</LayoutAdmin>
   ) : (
     <LayoutPortfolio>{children}</LayoutPortfolio>

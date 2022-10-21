@@ -41,6 +41,7 @@ export default NextAuth({
         await prisma.$disconnect();
 
         return {
+          id: user.email,
           name: user.name,
           email: user.email,
         };

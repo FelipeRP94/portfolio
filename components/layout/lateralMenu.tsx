@@ -17,7 +17,7 @@ export const LateralMenu = () => {
     router.pathname.includes(itemUrl);
 
   return (
-    <aside className="fixed w-48 h-full bg-white shadow-md text-md">
+    <aside className="fixed w-48 h-full bg-white shadow-md text-md mt-16">
       {menuItems.map((item, idx) => (
         <div
           key={idx}
