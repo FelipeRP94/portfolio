@@ -7,7 +7,7 @@ export const HeaderAdmin = () => {
   const { data } = useSession();
   const { doLogout } = useLogin();
 
-  return data ? (
+  return (
     <Header>
       <div className="w-full flex items-center justify-end m-3 text-white">
         <AiOutlineUser />
@@ -18,5 +18,5 @@ export const HeaderAdmin = () => {
         </button>
       </div>
     </Header>
-  ) : null;
+  );
 };

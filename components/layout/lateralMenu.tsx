@@ -22,7 +22,7 @@ export const LateralMenu = () => {
         <div
           key={idx}
           onClick={() => router.push(`/admin/${item.url}`)}
-          className={`cursor-pointer flex items-center border-slate-800 p-4 px-6 border-b-2 ${
+          className={`cursor-pointer flex items-center p-4 px-6 ${
             isMenuItemActive(item.url)
               ? "text-white bg-slate-400"
               : "text-slate-800"
