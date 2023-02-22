@@ -1,3 +1,4 @@
+import { formatExperienceDate } from "../../../common/utils/date.utils";
 import { Experience } from "../../../model/experience";
 import {
   ExperienceContainer,
@@ -10,16 +11,6 @@ import {
 interface Props {
   experiences: Experience[];
 }
-
-const MONTHS_ARRAY = [
-  "January, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dic",
-];
-
-const formatExperienceDate = (date: Date) =>
-  date.toLocaleDateString("en-US", {
-    month: "long",
-    year: "numeric",
-  });
 
 export const ExperienceList = ({ experiences }: Props) => {
   if (!experiences.length) {
