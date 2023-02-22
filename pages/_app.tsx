@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
           <meta charSet="utf-8" />
           <meta
             name="description"
-            content="Full Stack Web Developer with more than 6 years of experience"
+            content="Full Stack Web Developer with more than 7 years of experience"
           />
         </Head>
         <Layout>

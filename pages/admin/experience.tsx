@@ -1,11 +1,11 @@
 import { NextPage } from "next";
 import { useSession } from "next-auth/react";
-import { ExperienceList } from "../../features/admin/ExperienceList/ExperienceList";
+import { ExperienceList } from "../../pods/admin/ExperienceList/ExperienceList";
 import {
   SectionTitle,
   Separator,
-} from "../../features/admin/ExperienceList/experienceList.styles";
-import { useExperiences } from "../../features/admin/ExperienceList/hooks/useExperiences";
+} from "../../pods/admin/ExperienceList/experienceList.styles";
+import { useExperiences } from "../../pods/admin/ExperienceList/hooks/useExperiences";
 
 const ExperiencePage: NextPage = () => {
   const { status } = useSession();

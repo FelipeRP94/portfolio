@@ -1,8 +1,5 @@
 import { formatExperienceDate } from "../../common/utils/date.utils";
-import { EXPERIENCE } from "../../components/common/data/experience";
-import { Timeline } from "../../components/common/timeline/timeline";
 import { Experience } from "../../model/experience";
-import { useExperiences } from "../admin/ExperienceList/hooks/useExperiences";
 import {
   ExperienceCompany,
   ExperienceContainer,
