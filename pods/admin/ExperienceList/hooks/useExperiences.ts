@@ -6,5 +6,5 @@ export const useExperiences = () => {
     experiencesApi.getExperiences()
   );
 
-  return { experiences: data ? Object.values(data) : [] };
+  return data ? Object.values(data) : [];
 };

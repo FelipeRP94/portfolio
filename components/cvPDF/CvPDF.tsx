@@ -9,10 +9,10 @@ import { CvSkills } from "./CvSkills";
 import { CvPersonalData } from "./CvPersonalData";
 import { CvTitle } from "./CvTitle";
 import { useExperiences } from "../../pods/admin/ExperienceList/hooks/useExperiences";
+import { QueryClientProvider } from "react-query";
+import { queryClient } from "../../react-query";
 
 export const CvPDF = () => {
-  const { experiences } = useExperiences();
-
   // Font.register({
   //   family: "Montserrat",
   //   format: "truetype",
@@ -39,18 +39,20 @@ export const CvPDF = () => {
   });
 
   return (
-    <Document>
-      <Page size="A4" style={styles.page}>
-        <View style={styles.mainData}>
-          <CvTitle />
-          <CvExperience experiences={experiences} />
-          <CvEducation />
-        </View>
-        <View style={styles.secondaryData}>
-          <CvPersonalData />
-          <CvSkills />
-        </View>
-      </Page>
-    </Document>
+    <QueryClientProvider client={queryClient}>
+      <Document>
+        <Page size="A4" style={styles.page}>
+          <View style={styles.mainData}>
+            <CvTitle />
+            <CvExperience />
+            <CvEducation />
+          </View>
+          <View style={styles.secondaryData}>
+            <CvPersonalData />
+            <CvSkills />
+          </View>
+        </Page>
+      </Document>
+    </QueryClientProvider>
   );
 };

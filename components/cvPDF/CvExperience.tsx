@@ -4,7 +4,7 @@ import { commonStyles } from "./styles";
 import { useExperiences } from "../../pods/admin/ExperienceList/hooks/useExperiences";
 
 export const CvExperience = () => {
-  const { experiences } = useExperiences();
+  const experiences = useExperiences();
 
   const styles = StyleSheet.create({
     ...commonStyles,
