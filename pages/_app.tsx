@@ -8,21 +8,21 @@ import { queryClient } from "../react-query";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
-    <QueryClientProvider client={queryClient}>
-      <SessionProvider session={session}>
-        <Head>
-          <title>Felipe Ruiz Pinto</title>
-          <meta charSet="utf-8" />
-          <meta
-            name="description"
-            content="Full Stack Web Developer with more than 7 years of experience"
-          />
-        </Head>
-        <Layout>
+    <SessionProvider session={session}>
+      <Head>
+        <title>Felipe Ruiz Pinto</title>
+        <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content="Full Stack Web Developer with more than 7 years of experience"
+        />
+      </Head>
+      <Layout>
+        <QueryClientProvider client={queryClient}>
           <Component {...pageProps} />
-        </Layout>
-      </SessionProvider>
-    </QueryClientProvider>
+        </QueryClientProvider>
+      </Layout>
+    </SessionProvider>
   );
 }
 

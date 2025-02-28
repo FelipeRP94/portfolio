@@ -3,23 +3,26 @@ import { Page, View, Document, StyleSheet, Font } from "@react-pdf/renderer";
 import { CvEducation } from "./CvEducation";
 import { CvExperience } from "./CvExperience";
 import { primaryColor } from "./styles";
-import Montserrat from "../../assets/fonts/Montserrat-Regular.ttf";
-import MontserratBold from "../../assets/fonts/Montserrat-Bold.ttf";
+// import Montserrat from "../../assets/fonts/Montserrat-Regular.ttf";
+// import MontserratBold from "../../assets/fonts/Montserrat-Bold.ttf";
 import { CvSkills } from "./CvSkills";
 import { CvPersonalData } from "./CvPersonalData";
 import { CvTitle } from "./CvTitle";
+import { useExperiences } from "../../pods/admin/ExperienceList/hooks/useExperiences";
 
 export const CvPDF = () => {
-  Font.register({
-    family: "Montserrat",
-    format: "truetype",
-    fonts: [{ src: Montserrat }, { src: MontserratBold, fontWeight: 800 }],
-  });
+  const { experiences } = useExperiences();
+
+  // Font.register({
+  //   family: "Montserrat",
+  //   format: "truetype",
+  //   fonts: [{ src: Montserrat }, { src: MontserratBold, fontWeight: 800 }],
+  // });
 
   const styles = StyleSheet.create({
     page: {
       flexDirection: "row",
-      fontFamily: "Montserrat",
+      // fontFamily: "Montserrat",
     },
     mainData: {
       flex: 3,
@@ -40,7 +43,7 @@ export const CvPDF = () => {
       <Page size="A4" style={styles.page}>
         <View style={styles.mainData}>
           <CvTitle />
-          <CvExperience />
+          <CvExperience experiences={experiences} />
           <CvEducation />
         </View>
         <View style={styles.secondaryData}>

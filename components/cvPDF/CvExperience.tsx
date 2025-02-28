@@ -1,7 +1,7 @@
 import { View, StyleSheet, Text } from "@react-pdf/renderer";
 import { formatExperienceDate } from "../../common/utils/date.utils";
-import { useExperiences } from "../../pods/admin/ExperienceList/hooks/useExperiences";
 import { commonStyles } from "./styles";
+import { useExperiences } from "../../pods/admin/ExperienceList/hooks/useExperiences";
 
 export const CvExperience = () => {
   const { experiences } = useExperiences();

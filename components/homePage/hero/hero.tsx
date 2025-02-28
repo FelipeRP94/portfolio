@@ -1,4 +1,3 @@
-import { PDFDownloadLink } from "@react-pdf/renderer";
 import {
   AiFillLinkedin,
   AiOutlineFilePdf,
