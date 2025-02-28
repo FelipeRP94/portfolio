@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { Page, View, Document, StyleSheet, Font } from "@react-pdf/renderer";
+import { Page, View, Document, StyleSheet } from "@react-pdf/renderer";
 import { CvEducation } from "./CvEducation";
 import { CvExperience } from "./CvExperience";
 import { primaryColor } from "./styles";
@@ -8,7 +8,6 @@ import { primaryColor } from "./styles";
 import { CvSkills } from "./CvSkills";
 import { CvPersonalData } from "./CvPersonalData";
 import { CvTitle } from "./CvTitle";
-import { useExperiences } from "../../pods/admin/ExperienceList/hooks/useExperiences";
 import { QueryClientProvider } from "react-query";
 import { queryClient } from "../../react-query";
 

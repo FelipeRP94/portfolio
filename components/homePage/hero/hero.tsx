@@ -4,10 +4,15 @@ import {
   AiOutlineGithub,
   AiOutlineMail,
 } from "react-icons/ai";
-import { CvPDF } from "../../cvPDF/CvPDF";
 import classes from "./hero.module.css";
 import { useEffect, useState } from "react";
 import { DownloadCVButton, SocialMediaIcon } from "./hero.styles";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+
+const CvPDF = dynamic(() =>
+  import("../../cvPDF/CvPDF").then((mod) => mod.CvPDF)
+);
 
 export const Hero = () => {
   const [renderPDFButton, setRenderPDFButton] = useState<boolean>(false);
@@ -18,7 +23,13 @@ export const Hero = () => {
 
   return (
     <section className={classes.hero} id="aboutme">
-      <div className="p-12 text-white z-1">
+      <Image
+        src="/images/hero.webp"
+        priority={true}
+        layout="fill"
+        loading="eager"
+      />
+      <div className="p-12 text-white z-10 relative">
         <div className="flex justify-between flex-col md:flex-row">
           <div className="h-auto md:w-3/5 text-justify font-bold">
             <h1 className="text-5xl mt-2 mb-12">Hi! I&apos;m Felipe Ruiz</h1>
