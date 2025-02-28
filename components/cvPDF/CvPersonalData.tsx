@@ -18,11 +18,10 @@ export const CvPersonalData = () => {
     <View>
       <Text style={styles.sectionTitle}>Contact data</Text>
       <Text style={styles.contactText}>Málaga, Spain</Text>
-      <Text style={styles.contactText}>felipe.r.p.1994@gmail.com</Text>
+      <Text style={styles.contactText}>ruizpintofelipe@gmail.com</Text>
       <Text style={styles.contactText}>
         https://linkedin.com/in/felipe-ruiz-pinto
       </Text>
-      <Text style={styles.contactText}>https://feliperuiz.info/</Text>
     </View>
   );
 };
