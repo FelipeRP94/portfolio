@@ -8,10 +8,10 @@ import { primaryColor } from "./styles";
 import { CvSkills } from "./CvSkills";
 import { CvPersonalData } from "./CvPersonalData";
 import { CvTitle } from "./CvTitle";
-import { QueryClientProvider } from "react-query";
+import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "../../react-query";
 
-export const CvPDF = () => {
+const CvPDF = () => {
   // Font.register({
   //   family: "Montserrat",
   //   format: "truetype",
@@ -55,3 +55,5 @@ export const CvPDF = () => {
     </QueryClientProvider>
   );
 };
+
+export default CvPDF;

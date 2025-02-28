@@ -10,12 +10,9 @@ import { DownloadCVButton, SocialMediaIcon } from "./hero.styles";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
-const CvPDF = dynamic(
-  () => import("../../cvPDF/CvPDF").then((mod) => mod.CvPDF),
-  {
-    ssr: false,
-  }
-);
+const CvPDF = dynamic(() => import("../../cvPDF/CvPDF"), {
+  ssr: false,
+});
 
 export const Hero = () => {
   const [renderPDFButton, setRenderPDFButton] = useState<boolean>(false);
@@ -26,12 +23,7 @@ export const Hero = () => {
 
   return (
     <section className={classes.hero} id="aboutme">
-      <Image
-        src="/images/hero.webp"
-        priority={true}
-        layout="fill"
-        loading="eager"
-      />
+      <Image src="/images/hero.webp" priority loading="eager" alt="hero" fill />
       <div className="p-12 text-white z-10 relative">
         <div className="flex justify-between flex-col md:flex-row">
           <div className="h-auto md:w-3/5 text-justify font-bold">

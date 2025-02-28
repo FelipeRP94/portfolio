@@ -1,3 +1,5 @@
+import { JSX } from "react";
+
 export interface Experience {
   position: string;
   company: string;

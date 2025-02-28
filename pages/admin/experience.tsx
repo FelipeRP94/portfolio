@@ -9,7 +9,7 @@ import { useExperiences } from "../../pods/admin/ExperienceList/hooks/useExperie
 
 const ExperiencePage: NextPage = () => {
   const { status } = useSession();
-  const { experiences } = useExperiences();
+  const experiences = useExperiences();
 
   if (status === "loading") {
     return <p>Loading...</p>;

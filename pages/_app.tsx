@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { Layout } from "../components/layout/layout";
 import { SessionProvider } from "next-auth/react";
-import { QueryClientProvider } from "react-query";
+import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "../react-query";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
