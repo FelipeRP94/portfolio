@@ -1,16 +1,28 @@
-import type { NextPage } from "next";
-import React from "react";
-import { ExperienceSection } from "../components/homePage/experience/experienceSection";
-import { Hero } from "../components/homePage/hero/hero";
 import { ContactSection } from "../components/homePage/contact/contactSection";
+import { Experience } from "../model/experience";
+import { experiencesApi } from "../api/experiences.api";
+import { ExperienceSection } from "../pods/experienceList/experienceSection";
+import { Hero } from "../components/homePage/hero/hero";
 import { SkillSection } from "../components/homePage/skills/skillSection";
 import { StudiesSection } from "../components/homePage/studies/studiesSection";
+import React from "react";
+import type { NextPage } from "next";
 
-const Portfolio: NextPage = () => {
+export async function getServerSideProps() {
+  const experiences = await experiencesApi.getExperiences();
+
+  return { props: { experiences: Object.values(experiences) } };
+}
+
+interface Props {
+  experiences: Experience[];
+}
+
+const Portfolio: NextPage<Props> = ({ experiences }) => {
   return (
     <React.Fragment>
       <Hero />
-      <ExperienceSection />
+      <ExperienceSection experiences={experiences} />
       <SkillSection />
       <StudiesSection />
       <ContactSection />

@@ -1,25 +1,27 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { Page, View, Document, StyleSheet, Font } from "@react-pdf/renderer";
+import { Page, View, Document, StyleSheet } from "@react-pdf/renderer";
 import { CvEducation } from "./CvEducation";
 import { CvExperience } from "./CvExperience";
 import { primaryColor } from "./styles";
-import Montserrat from "../../assets/fonts/Montserrat-Regular.ttf";
-import MontserratBold from "../../assets/fonts/Montserrat-Bold.ttf";
+// import Montserrat from "../../assets/fonts/Montserrat-Regular.ttf";
+// import MontserratBold from "../../assets/fonts/Montserrat-Bold.ttf";
 import { CvSkills } from "./CvSkills";
 import { CvPersonalData } from "./CvPersonalData";
 import { CvTitle } from "./CvTitle";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "../../react-query";
 
-export const CvPDF = () => {
-  Font.register({
-    family: "Montserrat",
-    format: "truetype",
-    fonts: [{ src: Montserrat }, { src: MontserratBold, fontWeight: 800 }],
-  });
+const CvPDF = () => {
+  // Font.register({
+  //   family: "Montserrat",
+  //   format: "truetype",
+  //   fonts: [{ src: Montserrat }, { src: MontserratBold, fontWeight: 800 }],
+  // });
 
   const styles = StyleSheet.create({
     page: {
       flexDirection: "row",
-      fontFamily: "Montserrat",
+      // fontFamily: "Montserrat",
     },
     mainData: {
       flex: 3,
@@ -36,18 +38,22 @@ export const CvPDF = () => {
   });
 
   return (
-    <Document>
-      <Page size="A4" style={styles.page}>
-        <View style={styles.mainData}>
-          <CvTitle />
-          <CvExperience />
-          <CvEducation />
-        </View>
-        <View style={styles.secondaryData}>
-          <CvPersonalData />
-          <CvSkills />
-        </View>
-      </Page>
-    </Document>
+    <QueryClientProvider client={queryClient}>
+      <Document>
+        <Page size="A4" style={styles.page}>
+          <View style={styles.mainData}>
+            <CvTitle />
+            <CvExperience />
+            <CvEducation />
+          </View>
+          <View style={styles.secondaryData}>
+            <CvPersonalData />
+            <CvSkills />
+          </View>
+        </Page>
+      </Document>
+    </QueryClientProvider>
   );
 };
+
+export default CvPDF;

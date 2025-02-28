@@ -9,10 +9,6 @@ const AdminPage: NextPage = () => {
     return <p>Loading...</p>;
   }
 
-  if (!data) {
-    return <LoginForm />;
-  }
-
   return <p>Welcome {data?.user?.name}</p>;
 };
 

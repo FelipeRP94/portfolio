@@ -15,7 +15,7 @@ export const StudiesSection = () => {
       <h1 className="text-center text-4xl font-bold text-sky-900 my-12">
         Education
       </h1>
-      <Timeline data={data} />
+      {/* <Timeline data={data} /> */}
     </section>
   );
 };

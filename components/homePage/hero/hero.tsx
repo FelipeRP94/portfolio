@@ -1,13 +1,18 @@
-import { PDFDownloadLink } from "@react-pdf/renderer";
 import {
   AiFillLinkedin,
   AiOutlineFilePdf,
   AiOutlineGithub,
   AiOutlineMail,
 } from "react-icons/ai";
-import { CvPDF } from "../../cvPDF/CvPDF";
 import classes from "./hero.module.css";
 import { useEffect, useState } from "react";
+import { DownloadCVButton, SocialMediaIcon } from "./hero.styles";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+
+const CvPDF = dynamic(() => import("../../cvPDF/CvPDF"), {
+  ssr: false,
+});
 
 export const Hero = () => {
   const [renderPDFButton, setRenderPDFButton] = useState<boolean>(false);
@@ -18,7 +23,8 @@ export const Hero = () => {
 
   return (
     <section className={classes.hero} id="aboutme">
-      <div className="p-12 text-white z-1">
+      <Image src="/images/hero.webp" priority loading="eager" alt="hero" fill />
+      <div className="p-12 text-white z-10 relative">
         <div className="flex justify-between flex-col md:flex-row">
           <div className="h-auto md:w-3/5 text-justify font-bold">
             <h1 className="text-5xl mt-2 mb-12">Hi! I&apos;m Felipe Ruiz</h1>
@@ -34,11 +40,6 @@ export const Hero = () => {
               a good coworker, always help my teamates to reach the project
               goals.
             </p>
-            <p className="my-4">
-              I&apos;ve had the opportunity to work in several companies with
-              different types of projects. It has let me learn different
-              cultures of working.
-            </p>
             <p className="my-4 mb-12">
               For me, training is indispensable in my career as a developer. I
               like to learn the latest technologies and be up to date. For this
@@ -46,44 +47,36 @@ export const Hero = () => {
               plan that their employees can keep growing.
             </p>
             {renderPDFButton && (
-              <PDFDownloadLink
+              <DownloadCVButton
                 document={<CvPDF />}
                 fileName="CV Felipe Ruiz Pinto.pdf"
-                className={
-                  "w-full md:w-64 py-4 px-2 my-2 flex items-center justify-center rounded-md border-2 text-white border-white"
-                }
               >
                 <span className="text-xl mr-2">
                   <AiOutlineFilePdf />
                 </span>
                 <span>Download CV (PDF)</span>
-              </PDFDownloadLink>
+              </DownloadCVButton>
             )}
           </div>
 
           <div className="flex my-8 md:m-0 items-end">
-            <a
-              className="text-4xl mr-1 cursor-pointer"
+            <SocialMediaIcon
               href="https://linkedin.com/in/felipe-ruiz-pinto-210a63151"
               target="_blank"
               rel="nofollow noopener noreferrer"
             >
               <AiFillLinkedin />
-            </a>
-            <a
-              className="text-4xl mx-1 cursor-pointer"
+            </SocialMediaIcon>
+            <SocialMediaIcon
               href="https://github.com/FelipeRP94"
               target="_blank"
               rel="nofollow noopener noreferrer"
             >
               <AiOutlineGithub />
-            </a>
-            <a
-              className="text-4xl mx-1 cursor-pointer"
-              href="mailto:felipe.r.p.1994@gmail.com"
-            >
+            </SocialMediaIcon>
+            <SocialMediaIcon href="mailto:ruizpintofelipe@gmail.com">
               <AiOutlineMail />
-            </a>
+            </SocialMediaIcon>
           </div>
         </div>
       </div>

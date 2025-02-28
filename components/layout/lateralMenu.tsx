@@ -17,12 +17,12 @@ export const LateralMenu = () => {
     router.pathname.includes(itemUrl);
 
   return (
-    <aside className="fixed w-48 h-full bg-white shadow-md text-md">
+    <aside className="fixed w-48 h-full bg-white shadow-md text-md mt-16">
       {menuItems.map((item, idx) => (
         <div
           key={idx}
           onClick={() => router.push(`/admin/${item.url}`)}
-          className={`cursor-pointer flex items-center border-slate-800 p-4 px-6 border-b-2 ${
+          className={`cursor-pointer flex items-center p-4 px-6 ${
             isMenuItemActive(item.url)
               ? "text-white bg-slate-400"
               : "text-slate-800"

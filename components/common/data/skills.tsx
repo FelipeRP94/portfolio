@@ -35,7 +35,7 @@ export const SKILL_CV: SkillCV[] = [
   { name: "CSS", level: 3 },
   { name: "Typescript", level: 4 },
   { name: "C#", level: 3 },
-  { name: "Entity Framework", level: 3 },
+  { name: ".Net Core", level: 3 },
   { name: "Microsoft SQL Server", level: 3 },
 ];
 
