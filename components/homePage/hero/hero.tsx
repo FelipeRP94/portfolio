@@ -10,8 +10,11 @@ import { DownloadCVButton, SocialMediaIcon } from "./hero.styles";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
-const CvPDF = dynamic(() =>
-  import("../../cvPDF/CvPDF").then((mod) => mod.CvPDF)
+const CvPDF = dynamic(
+  () => import("../../cvPDF/CvPDF").then((mod) => mod.CvPDF),
+  {
+    ssr: false,
+  }
 );
 
 export const Hero = () => {
