@@ -8,7 +8,7 @@ import { StudiesSection } from "../components/homePage/studies/studiesSection";
 import React from "react";
 import type { NextPage } from "next";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const experiences = await experiencesApi.getExperiences();
 
   return { props: { experiences: Object.values(experiences) } };
