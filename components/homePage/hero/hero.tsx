@@ -5,22 +5,26 @@ import {
   AiOutlineMail,
 } from "react-icons/ai";
 import classes from "./hero.module.css";
-import { useEffect, useState } from "react";
 import { DownloadCVButton, SocialMediaIcon } from "./hero.styles";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
-const CvPDF = dynamic(() => import("../../cvPDF/CvPDF"), {
-  ssr: false,
-});
+const DownloadPDFButton = dynamic(
+  () => import("./components/DownloadPDFButton"),
+  {
+    ssr: false,
+    loading: () => (
+      <DownloadCVButton>
+        <span className="text-xl mr-2">
+          <AiOutlineFilePdf />
+        </span>
+        <span>Download CV (PDF)</span>
+      </DownloadCVButton>
+    ),
+  }
+);
 
 export const Hero = () => {
-  const [renderPDFButton, setRenderPDFButton] = useState<boolean>(false);
-
-  useEffect(() => {
-    setRenderPDFButton(true);
-  }, []);
-
   return (
     <section className={classes.hero} id="aboutme">
       <Image src="/images/hero.webp" priority loading="eager" alt="hero" fill />
@@ -46,17 +50,7 @@ export const Hero = () => {
               reason, the ideal company for me has to implement a good career
               plan that their employees can keep growing.
             </p>
-            {renderPDFButton && (
-              <DownloadCVButton
-                document={<CvPDF />}
-                fileName="CV Felipe Ruiz Pinto.pdf"
-              >
-                <span className="text-xl mr-2">
-                  <AiOutlineFilePdf />
-                </span>
-                <span>Download CV (PDF)</span>
-              </DownloadCVButton>
-            )}
+            <DownloadPDFButton />
           </div>
 
           <div className="flex my-8 md:m-0 items-end">

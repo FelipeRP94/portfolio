@@ -1,8 +1,7 @@
-import { PDFDownloadLink } from "@react-pdf/renderer";
 import styled from "styled-components";
 import { COLORS } from "../../../common-app/styles/constants";
 
-export const DownloadCVButton = styled(PDFDownloadLink)`
+export const DownloadCVButton = styled.a`
   width: 300px;
   display: flex;
   justify-content: center;

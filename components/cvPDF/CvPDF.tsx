@@ -11,7 +11,7 @@ import { CvTitle } from "./CvTitle";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "../../react-query";
 
-const CvPDF = () => {
+export const CvPDF = () => {
   // Font.register({
   //   family: "Montserrat",
   //   format: "truetype",
@@ -38,8 +38,8 @@ const CvPDF = () => {
   });
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <Document>
+    <Document>
+      <QueryClientProvider client={queryClient}>
         <Page size="A4" style={styles.page}>
           <View style={styles.mainData}>
             <CvTitle />
@@ -51,9 +51,7 @@ const CvPDF = () => {
             <CvSkills />
           </View>
         </Page>
-      </Document>
-    </QueryClientProvider>
+      </QueryClientProvider>
+    </Document>
   );
 };
-
-export default CvPDF;

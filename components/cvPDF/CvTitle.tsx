@@ -22,7 +22,7 @@ export const CvTitle = () => {
     },
     image: {
       width: "15%",
-      borderRadius: "50%",
+      borderRadius: 50,
       marginRight: 20,
     },
     titleWrapper: {

@@ -17,15 +17,15 @@ export const SkillCategoryCard = ({ skillCategory }: Props) => {
     <div className="my-4 md:m-4 bg-white shadow-xl rounded-md p-8 md:w-1/3">
       <span className="text-sky-900 flex justify-center text-5xl">{icon}</span>
       <p className="my-4 font-bold text-2xl text-center">{name}</p>
-      <p className="my-4">
+      <div className="my-4">
         <span className="text-slate-500 text-lg">Main skills</span>
-        <div className="flex flex-wrap mt-2">{main.map(getSkillPill)}</div>
-      </p>
+        <span className="flex flex-wrap mt-2">{main.map(getSkillPill)}</span>
+      </div>
       {other && (
-        <p>
+        <div>
           <span className="text-slate-500 text-lg mb-2">Other skills</span>
-          <div className="flex flex-wrap mt-2">{other.map(getSkillPill)}</div>
-        </p>
+          <span className="flex flex-wrap mt-2">{other.map(getSkillPill)}</span>
+        </div>
       )}
     </div>
   );
