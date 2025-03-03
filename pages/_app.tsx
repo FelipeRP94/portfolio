@@ -2,13 +2,22 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { Layout } from "../components/layout/layout";
-import { SessionProvider } from "next-auth/react";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "../react-query";
+import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
+
+const SessionProvider = dynamic(() =>
+  import("next-auth/react").then((mod) => mod.SessionProvider)
+);
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
+  const { pathname } = useRouter();
+
+  const isAdmin = pathname.includes("admin");
+
   return (
-    <SessionProvider session={session}>
+    <>
       <Head>
         <title>Felipe Ruiz Pinto</title>
         <meta charSet="utf-8" />
@@ -19,10 +28,16 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
       </Head>
       <Layout>
         <QueryClientProvider client={queryClient}>
-          <Component {...pageProps} />
+          {isAdmin ? (
+            <SessionProvider session={session}>
+              <Component {...pageProps} />
+            </SessionProvider>
+          ) : (
+            <Component {...pageProps} />
+          )}
         </QueryClientProvider>
       </Layout>
-    </SessionProvider>
+    </>
   );
 }
 
