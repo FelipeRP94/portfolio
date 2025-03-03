@@ -17,7 +17,7 @@ export const Layout = ({ children, session }: Props) => {
   const { pathname } = useRouter();
 
   return /admin/i.test(pathname) ? (
-    <SessionProvider session={session.session}>
+    <SessionProvider session={session?.session}>
       <LayoutAdmin>{children}</LayoutAdmin>
     </SessionProvider>
   ) : (
