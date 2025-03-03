@@ -12,8 +12,6 @@ export const LayoutAdmin = ({ children }: Props) => {
   const { status } = useSession();
   const isAuthenticated = status === "authenticated";
 
-  console.log(status);
-
   if (status === "loading") {
     return <p>Loading...</p>;
   }
